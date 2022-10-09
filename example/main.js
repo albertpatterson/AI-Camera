@@ -99,6 +99,14 @@ async function takepictures(video, canvas, model) {
 
   context.drawImage(video, 0, 0, width, height);
 
+  drawPredictions(video, context, predictions, scale);
+
+  requestAnimationFrame(() => {
+    takepictures(video, canvas, model, false);
+  });
+}
+
+function drawPredictions(video, context, predictions, scale) {
   for (const prediction of predictions) {
     const [xRaw, yRaw, heightRaw, widthRaw] = prediction.bbox;
     const x = xRaw * scale;
@@ -108,10 +116,6 @@ async function takepictures(video, canvas, model) {
     context.strokeRect(x, y, height, width);
     context.fillText(prediction.class, x + 5, y + 25);
   }
-
-  setTimeout(() => {
-    takepictures(video, canvas, model, false);
-  }, 0);
 }
 
 function getModel() {
