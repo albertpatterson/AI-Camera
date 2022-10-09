@@ -94,9 +94,10 @@ async function takepictures(video, canvas, model) {
   const context = canvas.getContext('2d');
 
   const { height, width, scale } = getCanvasSize(video);
-  context.drawImage(video, 0, 0, width, height);
 
   const predictions = await model.detect(video);
+
+  context.drawImage(video, 0, 0, width, height);
 
   for (const prediction of predictions) {
     const [xRaw, yRaw, heightRaw, widthRaw] = prediction.bbox;
