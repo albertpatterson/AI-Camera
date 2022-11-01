@@ -12,7 +12,7 @@
     "step-5": "node ./step/clone_image_capture_app.js",
     "step-6": "firebase serve -o 0.0.0.0",
     "step-7": "firebase deploy",
-    "printer-friendly-readme": "printer-friendly-readme"
+    "printer-friendly-readme": "npx printer-friendly-readme@latest"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
     "firebase-tools": "^11.14.1",
     "fs-extra": "^10.1.0",
     "http-server": "^14.1.1",
-    "printer-friendly-readme": "^1.0.2",
     "simple-git": "^3.14.1"
   },
   "type": "module"
