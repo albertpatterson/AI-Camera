@@ -13,7 +13,7 @@ async function launchCamera() {
 
     const app = document.getElementById('camera-app');
     const video = document.getElementById('video');
-    const canvas = document.getElementById('canvas');
+    const canvas = document.getElementById('canvas-canvas');
 
     app.style.display = 'block';
 
